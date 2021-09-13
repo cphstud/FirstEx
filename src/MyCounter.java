@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+
 public class MyCounter {
     private int taeller;
     private String name;
@@ -7,8 +9,16 @@ public class MyCounter {
         this.taeller=0;
     }
 
-    public void taelOp(){
-        this.taeller=this.taeller + 1;
+    public synchronized void taelOp() {
+        try {
+            Thread.sleep((int) (Math.random() * 10));
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+        //System.out.println(Thread.currentThread().getName());
+        //synchronized (this) {
+            this.taeller = this.taeller + 1;
+        //}
     }
 
     public int getSum() {
