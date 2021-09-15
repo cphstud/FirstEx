@@ -9,16 +9,13 @@ public class MyCounter {
         this.taeller=0;
     }
 
-    public synchronized void taelOp() {
+    public void taelOp() {
         try {
             Thread.sleep((int) (Math.random() * 10));
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }
-        //System.out.println(Thread.currentThread().getName());
-        //synchronized (this) {
-            this.taeller = this.taeller + 1;
-        //}
+        this.taeller = this.taeller + 1;
     }
 
     public int getSum() {
