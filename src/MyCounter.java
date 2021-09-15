@@ -8,6 +8,11 @@ public class MyCounter {
     }
 
     public void taelOp(){
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
         this.taeller=this.taeller + 1;
     }
 
