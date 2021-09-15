@@ -7,11 +7,14 @@ public class Main {
         MyCounter myCounter = new MyCounter("Kurts tæller");
         CounterThread t1 = new CounterThread(myCounter);
         CounterThread t2 = new CounterThread(myCounter);
+
+        long start = System.currentTimeMillis();
         t1.start();
         t2.start();
         t1.join();
         t2.join();
-        System.out.println("Done");
+        long stop = System.currentTimeMillis();
+        System.out.println("Done " + (stop-start) + " c:" + myCounter.getSum());
 	// write your code here
     }
 }

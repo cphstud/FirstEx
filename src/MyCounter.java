@@ -9,12 +9,15 @@ public class MyCounter {
         this.taeller=0;
     }
 
-    public void taelOp() {
+    public synchronized void taelOp() {
+        /*
         try {
             Thread.sleep((int) (Math.random() * 10));
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }
+
+         */
         this.taeller = this.taeller + 1;
     }
 
